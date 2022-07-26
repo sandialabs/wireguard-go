@@ -207,14 +207,6 @@ func (tun *netTun) MTU() (int, error) {
 	return tun.mtu, nil
 }
 
-func (tun *netTun) Stack() *stack.Stack {
-	return tun.stack
-}
-
-func (tun *netTun) Dispatcher() stack.NetworkDispatcher {
-	return tun.dispatcher
-}
-
 func convertToFullAddr(endpoint netip.AddrPort) (tcpip.FullAddress, tcpip.NetworkProtocolNumber) {
 	var protoNumber tcpip.NetworkProtocolNumber
 	if endpoint.Addr().Is4() {
@@ -303,6 +295,14 @@ func (net *Net) DialUDP(laddr, raddr *net.UDPAddr) (*gonet.UDPConn, error) {
 
 func (net *Net) ListenUDP(laddr *net.UDPAddr) (*gonet.UDPConn, error) {
 	return net.DialUDP(laddr, nil)
+}
+
+func (net *Net) Stack() *stack.Stack {
+	return net.stack
+}
+
+func (net *Net) Dispatcher() stack.NetworkDispatcher {
+	return net.dispatcher
 }
 
 type PingConn struct {
