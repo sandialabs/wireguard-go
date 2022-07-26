@@ -207,6 +207,14 @@ func (tun *netTun) MTU() (int, error) {
 	return tun.mtu, nil
 }
 
+func (tun *netTun) Stack() *stack.Stack {
+	return tun.stack
+}
+
+func (tun *netTun) Dispatcher() stack.NetworkDispatcher {
+	return tun.dispatcher
+}
+
 func convertToFullAddr(endpoint netip.AddrPort) (tcpip.FullAddress, tcpip.NetworkProtocolNumber) {
 	var protoNumber tcpip.NetworkProtocolNumber
 	if endpoint.Addr().Is4() {
