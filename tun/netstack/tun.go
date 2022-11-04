@@ -272,8 +272,8 @@ func (net *Net) Stack() *stack.Stack {
 	return net.stack
 }
 
-func (net *Net) Dispatcher() stack.NetworkDispatcher {
-	return net.dispatcher
+func (net *Net) Endpoint() *channel.Endpoint {
+	return net.ep
 }
 
 type PingConn struct {
