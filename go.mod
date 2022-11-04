@@ -7,7 +7,7 @@ require (
 	golang.org/x/net v0.0.0-20220225172249-27dd8689420f
 	golang.org/x/sys v0.0.0-20220315194320-039c03cc5b86
 	golang.zx2c4.com/wintun v0.0.0-20211104114900-415007cec224
-	gvisor.dev/gvisor v0.0.0-20220817001344-846276b3dbc5
+	gvisor.dev/gvisor v0.0.0-20221104205919-655443bf0670
 )
 
 require (
