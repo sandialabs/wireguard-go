@@ -56,7 +56,6 @@ func CreateNetTUN(localAddresses, dnsServers []netip.Addr, mtu int) (tun.Device,
 	opts := stack.Options{
 		NetworkProtocols:         []stack.NetworkProtocolFactory{ipv4.NewProtocol, ipv6.NewProtocol},
 		TransportProtocols:       []stack.TransportProtocolFactory{tcp.NewProtocol, udp.NewProtocol, icmp.NewProtocol6, icmp.NewProtocol4},
-		HandleLocal:              true,
 		RawFactory:               raw.EndpointFactory{},
 		AllowPacketEndpointWrite: true,
 	}
